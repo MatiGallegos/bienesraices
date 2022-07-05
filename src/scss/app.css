@@ -399,7 +399,7 @@ h4 {
 }
 
 .contenido-centrado {
-  max-width: 800px;
+  max-width: 80rem;
 }
 
 .alinear-derecha {
@@ -416,9 +416,11 @@ h4 {
   text-align: center;
   margin-top: 2.5rem;
   display: inline-block;
+  border: none;
 }
 .boton-amarillo:hover {
   background-color: #c77808;
+  cursor: pointer;
 }
 
 .boton-amarillo-block {
@@ -430,9 +432,11 @@ h4 {
   text-align: center;
   margin-top: 2.5rem;
   display: block;
+  border: none;
 }
 .boton-amarillo-block:hover {
   background-color: #c77808;
+  cursor: pointer;
 }
 
 .boton-verde {
@@ -444,9 +448,49 @@ h4 {
   text-align: center;
   margin-top: 2.5rem;
   display: inline-block;
+  border: none;
 }
 .boton-verde:hover {
   background-color: #619800;
+  cursor: pointer;
+}
+
+.dark-mode {
+  background-color: #1a1a1a;
+}
+.dark-mode p {
+  color: #FFFFFF;
+}
+.dark-mode a, .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4 {
+  color: #e1e1e1;
+}
+.dark-mode .anuncio,
+.dark-mode .resumen-propiedad {
+  background-color: #333333;
+  border: 1px solid #333333;
+}
+.dark-mode .anuncio .precio,
+.dark-mode .resumen-propiedad .precio {
+  color: #71B100;
+}
+.dark-mode .anuncio .icono,
+.dark-mode .resumen-propiedad .icono {
+  filter: invert(100%);
+}
+.dark-mode .texto-nosotros blockquote {
+  color: #FFFFFF;
+}
+.dark-mode .formulario label,
+.dark-mode .formulario legend,
+.dark-mode .formulario p {
+  color: #e1e1e1;
+}
+.dark-mode .formulario input:not([type=submit]),
+.dark-mode .formulario textarea,
+.dark-mode .formulario select {
+  background-color: #333333;
+  border: 1px solid #333333;
+  color: #FFFFFF;
 }
 
 /** UI **/
@@ -498,27 +542,67 @@ h4 {
 .footer .contenedor-footer {
   padding-top: 2.5rem;
 }
+.footer .navegacion {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
 .footer .copyright {
   color: #FFFFFF;
   text-align: center;
 }
 
+.derecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .derecha {
+    align-items: flex-end;
+  }
+}
+.derecha .dark-mode-boton {
+  width: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  filter: invert(100%);
+}
+.derecha .dark-mode-boton:hover {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .derecha .dark-mode-boton {
+    margin-top: 0;
+  }
+}
+
 .barra {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 3rem;
 }
 @media (min-width: 768px) {
   .barra {
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
   }
 }
 
+.navegacion {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: visibility 0.3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+}
 @media (min-width: 768px) {
   .navegacion {
     display: flex;
     align-items: center;
+    opacity: 1;
+    visibility: visible;
   }
 }
 .navegacion a {
@@ -535,6 +619,22 @@ h4 {
   .navegacion a:last-of-type {
     margin-right: 0;
   }
+}
+
+/** Menú de hamburguesas **/
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+.mobile-menu img {
+  width: 5rem;
+}
+
+.mostrar {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
 }
 
 @media (min-width: 768px) {
@@ -564,6 +664,7 @@ h4 {
 .anuncio {
   background-color: #eeeeee;
   border: 1px solid #c8c8c8;
+  margin-bottom: 2rem;
 }
 .anuncio .contenedor-anuncio {
   padding: 2rem;
@@ -571,7 +672,8 @@ h4 {
 .anuncio h3, .anuncio p {
   margin: 0;
 }
-.anuncio .precio {
+
+.precio {
   color: #71B100;
   font-weight: 700;
   font-size: 3rem;
@@ -581,6 +683,7 @@ h4 {
   display: flex;
   list-style: none;
   padding: 0;
+  max-width: 40rem;
 }
 .iconos-caracteristicas li {
   flex: 1;
@@ -643,6 +746,10 @@ h4 {
   margin-bottom: 0;
 }
 
+.informacion-meta span {
+  color: #E08709;
+}
+
 .texto-entrada a {
   color: #000000;
   margin-top: 2rem;
@@ -664,9 +771,6 @@ h4 {
   height: 0.5rem;
   background-color: #71B100;
   margin-top: 1rem;
-}
-.texto-entrada span {
-  color: #E08709;
 }
 
 .testimonial {
@@ -695,6 +799,45 @@ h4 {
   color: #FFFFFF;
 }
 
+.formulario p {
+  font-size: 1.4rem;
+  color: #333333;
+  margin: 2rem 0 0 0;
+}
+.formulario legend {
+  font-size: 2rem;
+  color: #333333;
+}
+.formulario label {
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+}
+.formulario input:not([type=submit]),
+.formulario textarea,
+.formulario select {
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #e1e1e1;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.formulario textarea {
+  height: 20rem;
+}
+.formulario .forma-contacto {
+  max-width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.formulario input[type=radio] {
+  margin: 0;
+  width: auto;
+}
+
 /**Páginas internas**/
 @media (min-width: 768px) {
   .contenido-nosotros {
@@ -707,6 +850,6 @@ h4 {
 .texto-nosotros blockquote {
   font-weight: 900;
   font-size: 2.2rem;
-  margin: 0;
+  margin: 3rem 0 0 0;
   padding: 1rem 0 3rem 0;
 }/*# sourceMappingURL=app.css.map */
