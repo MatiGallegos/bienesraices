@@ -59,7 +59,7 @@
                         </li>                       
                     </ul>
 
-                    <a href="anuncios.html" class="boton-amarillo-block">
+                    <a href="anuncios.php" class="boton-amarillo-block">
                         Ver Propiedad
                     </a>
                 </div><!--.contenido-anuncio-->
@@ -92,7 +92,7 @@
                         </li>                       
                     </ul>
 
-                    <a href="anuncios.html" class="boton-amarillo-block">
+                    <a href="anuncios.php" class="boton-amarillo-block">
                         Ver Propiedad
                     </a>
                 </div><!--.contenido-anuncio-->
@@ -125,7 +125,7 @@
                         </li>                       
                     </ul>
 
-                    <a href="anuncios.html" class="boton-amarillo-block">
+                    <a href="anuncios.php" class="boton-amarillo-block">
                         Ver Propiedad
                     </a>
                 </div><!--.contenido-anuncio-->
@@ -135,7 +135,7 @@
         </div><!--.contenedor-anuncios-->
 
         <div class="alinear-derecha">
-            <a href="anuncios.html" class="boton-verde">Ver todas</a>
+            <a href="anuncios.php" class="boton-verde">Ver todas</a>
         </div>
     </section>
 
@@ -159,7 +159,7 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p class="informacion-meta">Escrito el: <span>1/7/2022</span> por: <span>Admin</span> </p>
 
@@ -180,7 +180,7 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Guía para la decoración de tu casa</h4>
                         <p class="informacion-meta">Escrito el: <span>1/7/2022</span> por: <span>Admin</span> </p>
                         
